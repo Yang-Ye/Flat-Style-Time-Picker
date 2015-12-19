@@ -15,9 +15,9 @@
 		A616C6341C234F0F00982C1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A616C6321C234F0F00982C1F /* LaunchScreen.storyboard */; };
 		A616C63F1C234F0F00982C1F /* Flat_Style_Time_PickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A616C63E1C234F0F00982C1F /* Flat_Style_Time_PickerTests.m */; };
 		A616C64A1C234F0F00982C1F /* Flat_Style_Time_PickerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A616C6491C234F0F00982C1F /* Flat_Style_Time_PickerUITests.m */; };
-		A616C65C1C23519500982C1F /* YYRoundTimePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A616C65B1C23519500982C1F /* YYRoundTimePicker.m */; };
-		A616C6621C23524F00982C1F /* YYFlatStyleTimePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A616C6611C23524F00982C1F /* YYFlatStyleTimePickerView.m */; };
-		A616C6721C23CE1800982C1F /* YYRoundTimePickerValueButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A616C6711C23CE1800982C1F /* YYRoundTimePickerValueButton.m */; };
+		A672349D1C2516F40072AA5C /* YYFlatStyleTimePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A67234981C2516F40072AA5C /* YYFlatStyleTimePickerView.m */; };
+		A672349E1C2516F40072AA5C /* YYRoundTimePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A672349A1C2516F40072AA5C /* YYRoundTimePicker.m */; };
+		A672349F1C2516F40072AA5C /* YYRoundTimePickerValueButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A672349C1C2516F40072AA5C /* YYRoundTimePickerValueButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,12 +54,12 @@
 		A616C6451C234F0F00982C1F /* Flat Style Time PickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flat Style Time PickerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A616C6491C234F0F00982C1F /* Flat_Style_Time_PickerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Flat_Style_Time_PickerUITests.m; sourceTree = "<group>"; };
 		A616C64B1C234F0F00982C1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A616C65A1C23519500982C1F /* YYRoundTimePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YYRoundTimePicker.h; path = ../YYRoundTimePicker.h; sourceTree = "<group>"; };
-		A616C65B1C23519500982C1F /* YYRoundTimePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YYRoundTimePicker.m; path = ../YYRoundTimePicker.m; sourceTree = "<group>"; };
-		A616C6601C23524F00982C1F /* YYFlatStyleTimePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YYFlatStyleTimePickerView.h; path = ../YYFlatStyleTimePickerView.h; sourceTree = "<group>"; };
-		A616C6611C23524F00982C1F /* YYFlatStyleTimePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YYFlatStyleTimePickerView.m; path = ../YYFlatStyleTimePickerView.m; sourceTree = "<group>"; };
-		A616C6701C23CE1800982C1F /* YYRoundTimePickerValueButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YYRoundTimePickerValueButton.h; path = ../YYRoundTimePickerValueButton.h; sourceTree = "<group>"; };
-		A616C6711C23CE1800982C1F /* YYRoundTimePickerValueButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YYRoundTimePickerValueButton.m; path = ../YYRoundTimePickerValueButton.m; sourceTree = "<group>"; };
+		A67234971C2516F40072AA5C /* YYFlatStyleTimePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFlatStyleTimePickerView.h; sourceTree = "<group>"; };
+		A67234981C2516F40072AA5C /* YYFlatStyleTimePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFlatStyleTimePickerView.m; sourceTree = "<group>"; };
+		A67234991C2516F40072AA5C /* YYRoundTimePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYRoundTimePicker.h; sourceTree = "<group>"; };
+		A672349A1C2516F40072AA5C /* YYRoundTimePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYRoundTimePicker.m; sourceTree = "<group>"; };
+		A672349B1C2516F40072AA5C /* YYRoundTimePickerValueButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYRoundTimePickerValueButton.h; sourceTree = "<group>"; };
+		A672349C1C2516F40072AA5C /* YYRoundTimePickerValueButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYRoundTimePickerValueButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,12 +110,12 @@
 		A616C6231C234F0E00982C1F /* Flat Style Time Picker */ = {
 			isa = PBXGroup;
 			children = (
-				A616C6601C23524F00982C1F /* YYFlatStyleTimePickerView.h */,
-				A616C6611C23524F00982C1F /* YYFlatStyleTimePickerView.m */,
-				A616C65A1C23519500982C1F /* YYRoundTimePicker.h */,
-				A616C65B1C23519500982C1F /* YYRoundTimePicker.m */,
-				A616C6701C23CE1800982C1F /* YYRoundTimePickerValueButton.h */,
-				A616C6711C23CE1800982C1F /* YYRoundTimePickerValueButton.m */,
+				A67234971C2516F40072AA5C /* YYFlatStyleTimePickerView.h */,
+				A67234981C2516F40072AA5C /* YYFlatStyleTimePickerView.m */,
+				A67234991C2516F40072AA5C /* YYRoundTimePicker.h */,
+				A672349A1C2516F40072AA5C /* YYRoundTimePicker.m */,
+				A672349B1C2516F40072AA5C /* YYRoundTimePickerValueButton.h */,
+				A672349C1C2516F40072AA5C /* YYRoundTimePickerValueButton.m */,
 				A616C6271C234F0E00982C1F /* AppDelegate.h */,
 				A616C6281C234F0F00982C1F /* AppDelegate.m */,
 				A616C62A1C234F0F00982C1F /* ViewController.h */,
@@ -302,12 +302,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A672349D1C2516F40072AA5C /* YYFlatStyleTimePickerView.m in Sources */,
 				A616C62C1C234F0F00982C1F /* ViewController.m in Sources */,
-				A616C65C1C23519500982C1F /* YYRoundTimePicker.m in Sources */,
 				A616C6291C234F0F00982C1F /* AppDelegate.m in Sources */,
-				A616C6621C23524F00982C1F /* YYFlatStyleTimePickerView.m in Sources */,
+				A672349E1C2516F40072AA5C /* YYRoundTimePicker.m in Sources */,
 				A616C6261C234F0E00982C1F /* main.m in Sources */,
-				A616C6721C23CE1800982C1F /* YYRoundTimePickerValueButton.m in Sources */,
+				A672349F1C2516F40072AA5C /* YYRoundTimePickerValueButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
