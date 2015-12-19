@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "YYFlatStyleTimePickerView.h"
-#import "YYFlatSwitch.h"
 
 @interface ViewController ()
 

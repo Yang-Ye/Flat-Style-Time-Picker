@@ -5,6 +5,7 @@
 //  Created by Yang Ye on 12/17/15.
 //  Copyright © 2015 YY. All rights reserved.
 //
+#define DEFAULTPICKERVIEWWIDTH 38
 
 #import "YYRoundTimePickerValueButton.h"
 
@@ -13,11 +14,11 @@
 -(instancetype)initWithFrame:(CGRect)frame withValue:(double)value{
     self = [super init];
     if (self) {
+        float sizeRatio = frame.size.width/DEFAULTPICKERVIEWWIDTH;
         self.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.width);
         self.layer.cornerRadius = frame.size.width/2;
-        self.backgroundColor = [UIColor grayColor];
-        [self setTitle:[NSString stringWithFormat:@"%0.0f",value] forState:UIControlStateNormal];
-        self.titleLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:23];
+        [self setTitle:[NSString stringWithFormat:@"%02d",(int)value] forState:UIControlStateNormal];
+        self.titleLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:23*sizeRatio];
         self.titleLabel.adjustsFontSizeToFitWidth = YES;
         self.value = value;
     }

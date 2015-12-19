@@ -17,4 +17,6 @@ typedef enum : NSUInteger {
 @interface YYRoundTimePicker : UIView
 @property(nonatomic,assign)NSTimeInterval pickedTimeInterva;
 @property(nonatomic,assign)YYRoundTimePickerType type;
+@property(nonatomic,strong)NSMutableArray *valueButtonArray;
+-(void)setPickerType:(YYRoundTimePickerType)pickerType;
 @end
