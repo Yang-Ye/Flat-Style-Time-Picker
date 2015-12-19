@@ -9,18 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "YYRoundTimePicker.h"
 
-@protocol  YYFlatStyleTimePickerViewDelegate;
-
 @interface YYFlatStyleTimePickerView : UIView
-@property(nonatomic,assign)NSTimeInterval pickerTimeInterval;
+@property(nonatomic,assign)NSTimeInterval pickedTimeInterval;
+@property(nonatomic,strong)NSString *pickedTimeIntervalString;
+@property(nonatomic,assign)BOOL AMTurnedOn;
 @property(nonatomic,strong)UIButton *confirmButton;
 @property(nonatomic,strong)UIButton *CancelButton;
-@property(nonatomic,assign)float hourDisplayLabelFont;
-@property(nonatomic,assign)float minuteDisplayLabelFont;
 
 -(instancetype)initWithWidth:(CGFloat)width;
-@end
-
-@protocol YYFlatStyleTimePickerViewDelegate <NSObject>
-
 @end

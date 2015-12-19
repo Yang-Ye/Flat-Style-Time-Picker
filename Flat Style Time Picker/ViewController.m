@@ -14,6 +14,7 @@
 @end
 
 @implementation ViewController{
+    YYFlatStyleTimePickerView *timePicker;
     UILabel *label;
 }
 
@@ -21,29 +22,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //Do any additional setup after loading the view, typically from a nib.
-    YYFlatStyleTimePickerView *timePicker = [[YYFlatStyleTimePickerView alloc]initWithWidth:300];
+    timePicker = [[YYFlatStyleTimePickerView alloc]initWithWidth:300];
+    timePicker.center = self.view.center;
+    [timePicker.confirmButton addTarget:self action:@selector(confirmButtonAction) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:timePicker];
     
-//    label = [[UILabel alloc]initWithFrame:CGRectMake(110, 200, 100, 50)];
-//    label.text = @"switch off";
-//    [self.view addSubview:label];
-//    
-//    YYFlatSwitch *myswitch = [[YYFlatSwitch alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
-//    myswitch.center = timePicker.center;
-//    [self.view addSubview:myswitch];
-//    
-//    [myswitch addTarget:self action:@selector(doSwitch:) forControlEvents:UIControlEventTouchDown];
+    
+    label = [[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2, 60, 400, 100)];
+    label.center = CGPointMake(self.view.center.x, label.frame.origin.y);
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = @"time";
+    label.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:40];
+    [self.view addSubview:label];
+    
 }
 
-//-(void)doSwitch:(YYFlatSwitch *)sender{
-//    if (!sender.on) {
-//        label.text = @"switch on";
-//    }
-//    else{
-//        label.text = @"switch off";
-//    }
-//}
+-(void)confirmButtonAction{
+    label.text = timePicker.pickedTimeIntervalString;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

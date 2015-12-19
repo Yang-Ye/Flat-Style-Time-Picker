@@ -29,6 +29,8 @@
     
     YYRoundTimePickerValueButton *lastTappedHour;
     YYRoundTimePickerValueButton *lastTappedMinute;
+    
+    NSDateComponentsFormatter *dateComponentsFormatter;
 }
 
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -54,6 +56,7 @@
 -(void)initilizationWithWidth:(CGFloat)width atPosition:(CGPoint)position{
     self.backgroundColor = [UIColor grayColor];
     self.frame = CGRectMake(position.x, position.y, width, width*1.775);
+    [self dateFormatterConvertNSTimeIntervalToReadable];
     
     UILabel *columnLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, pickerViewWidth*0.1, pickerViewHeight*0.20)];
     columnLabel.center = CGPointMake(self.center.x, columnLabel.center.y);
@@ -79,7 +82,7 @@
     [minuteLabelButton addTarget:self action:@selector(timeminuteLabelButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     minuteLabelButton.backgroundColor = flatDarkGray;
     minuteLabelButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    [minuteLabelButton setTitle:@"80" forState:UIControlStateNormal];
+    [minuteLabelButton setTitle:@"00" forState:UIControlStateNormal];
     [self labelSharedSetting:minuteLabelButton.titleLabel];
     [minuteLabelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self addSubview:minuteLabelButton];
@@ -92,6 +95,12 @@
     [self switchButtonSetup];
 }
 
+-(void)dateFormatterConvertNSTimeIntervalToReadable{
+    dateComponentsFormatter = [[NSDateComponentsFormatter alloc] init];
+    dateComponentsFormatter.zeroFormattingBehavior = NSDateComponentsFormatterZeroFormattingBehaviorPad;
+    dateComponentsFormatter.allowedUnits = (NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond);
+}
+
 -(void)timehourLabelButtonAction:(UIButton *)sender{
     if (!sender.selected) {
         sender.selected = YES;
@@ -100,7 +109,6 @@
         minuteLabelButton.selected = NO;
         [minuteLabelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [self valueButtonGetTappedAction:lastTappedHour];
-        NSLog(@"hour");
     }
 }
 
@@ -112,7 +120,6 @@
         hourLabelButton.selected = NO;
         [hourLabelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [self valueButtonGetTappedAction:lastTappedMinute];
-        NSLog(@"minute");
     }
 }
 
@@ -135,7 +142,6 @@
     [self addSubview:roundTimePicker];
 }
 
-
 -(void)valueButtonGetTappedAction:(YYRoundTimePickerValueButton *)sender{
     if (!sender.selected) {
         for (YYRoundTimePickerValueButton *valueButton in roundTimePicker.valueButtonArray) {
@@ -151,17 +157,21 @@
             [hourLabelButton setTitle:[NSString stringWithFormat:@"%02d",(int)sender.value] forState:UIControlStateNormal];
             lastTappedHour = sender;
             pickedHour = sender.value;
-            NSLog(@"1");
         }
         else{
             pickedMinute = sender.value;
             [minuteLabelButton setTitle:[NSString stringWithFormat:@"%02d",(int)sender.value] forState:UIControlStateNormal];
             lastTappedMinute = sender;
             pickedMinute = sender.value;
-            NSLog(@"2");
+        }
+        if (_AMTurnedOn) {
+            _pickedTimeInterval = 3600*pickedHour + 60*pickedMinute;
+        }
+        else{
+            _pickedTimeInterval = 3600*(pickedHour+12) + 60*pickedMinute;
 
         }
-        NSLog(@"%02d , %02d",(int)pickedHour,(int)pickedMinute);
+        _pickedTimeIntervalString = [dateComponentsFormatter stringFromTimeInterval:_pickedTimeInterval];
     }
 }
 
@@ -169,11 +179,10 @@
     AMSwitch = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, pickerViewWidth*0.2, pickerViewWidth*0.2)];
     AMSwitch.layer.anchorPoint = CGPointMake(0.5, 0.5);
     AMSwitch.layer.position = CGPointMake(pickerViewWidth/6, pickerViewHeight*0.80);
-    AMSwitch.backgroundColor = flatRed;
     AMSwitch.layer.cornerRadius = AMSwitch.frame.size.width/2;
     AMSwitch.titleLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:20*sizeRatio];
     [AMSwitch setTitle:@"AM" forState:UIControlStateNormal];
-    AMSwitch.selected =YES;
+    [self timeSwitchChangeAM:AMSwitch];
     [AMSwitch addTarget:self action:@selector(timeSwitchChangeAM:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:AMSwitch];
     
@@ -194,6 +203,9 @@
         sender.backgroundColor = flatRed;
         PMSwitch.selected = NO;
         PMSwitch.backgroundColor = flatDarkGray;
+        _AMTurnedOn = YES;
+        _pickedTimeInterval = 3600*pickedHour+ 60*pickedMinute;
+        _pickedTimeIntervalString = [dateComponentsFormatter stringFromTimeInterval:_pickedTimeInterval];
     }
 }
 
@@ -203,6 +215,9 @@
         sender.backgroundColor = flatRed;
         AMSwitch.selected = NO;
         AMSwitch.backgroundColor = flatDarkGray;
+        _AMTurnedOn = NO;
+        _pickedTimeInterval = 3600*(pickedHour+12) + 60*pickedMinute;
+        _pickedTimeIntervalString = [dateComponentsFormatter stringFromTimeInterval:_pickedTimeInterval];
     }
 }
 
@@ -220,6 +235,5 @@
     _CancelButton.backgroundColor = flatDarkGray;
     _CancelButton.titleLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:20*sizeRatio];
     [self addSubview:_CancelButton];
-    
 }
 @end
