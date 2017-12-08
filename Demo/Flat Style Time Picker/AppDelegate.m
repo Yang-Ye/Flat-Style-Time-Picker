@@ -4,7 +4,7 @@
 //
 //  Created by Yang Ye on 12/17/15.
 //  Copyright © 2015 YY. All rights reserved.
-//  This is a CI Test
+//  
 
 #import "AppDelegate.h"
 
