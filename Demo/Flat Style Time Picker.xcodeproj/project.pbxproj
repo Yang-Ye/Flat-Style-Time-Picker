@@ -223,6 +223,7 @@
 				TargetAttributes = {
 					A616C6201C234F0E00982C1F = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 4CQE952VKV;
 					};
 					A616C6391C234F0F00982C1F = {
 						CreatedOnToolsVersion = 7.1;
@@ -446,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4CQE952VKV;
 				INFOPLIST_FILE = "Flat Style Time Picker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "YY.Flat-Style-Time-Picker";
@@ -457,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4CQE952VKV;
 				INFOPLIST_FILE = "Flat Style Time Picker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "YY.Flat-Style-Time-Picker";
